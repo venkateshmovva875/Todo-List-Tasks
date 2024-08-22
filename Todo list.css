@@ -1,0 +1,174 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('https://lunaf.com/img/moon/l-phase-5.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    overflow: hidden;
+  }
+  
+  .container {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    backdrop-filter: blur(15px);
+    animation: slideIn 0.7s ease-out forwards;
+    opacity: 0;
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+  h1 {
+    text-align: center;
+    color: #222;
+    font-weight: 600;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .input-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  
+  #new-task {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: box-shadow 0.3s ease-in-out, border-color 0.3s;
+  }
+  
+  #new-task:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.6);
+    border-color: #007bff;
+  }
+  
+  #add-task-btn {
+    margin-left: 12px;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: transform 0.2s ease-in-out, background-color 0.3s, box-shadow 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+  }
+  
+  #add-task-btn:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
+    box-shadow: 0 6px 15px rgba(0, 86, 179, 0.5);
+  }
+  
+  #task-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+  }
+  
+  /* Fade-in animation for new tasks */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  .task-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: rgba(250, 250, 250, 0.85);
+    border-radius: 10px;
+    margin-bottom: 15px;
+    animation: fadeIn 0.5s ease-in;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .completed {
+    text-decoration: line-through;
+    color: #999;
+    transition: color 0.3s ease-in, text-decoration 0.3s ease-in;
+  }
+  
+  /* Fade-out animation for deleted tasks */
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+  
+  .task-item.deleting {
+    animation: fadeOut 0.5s ease-out forwards;
+  }
+  
+  button {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, background-color 0.3s, box-shadow 0.2s;
+    background-color: #ff4757;
+    border: none;
+    color: white;
+    border-radius: 12%;
+    padding:8px 12px;  
+    box-shadow: 0 4px 10px rgba(255, 71, 87, 0.3);
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+    background-color: #e84118;
+    box-shadow: 0 6px 15px rgba(232, 65, 24, 0.4);
+  }
+  
+  button:focus {
+    outline: none;
+  }
+  
+  /* General transition for all elements */
+  * {
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* Additional styling */
+  .container h1 {
+    font-size: 28px;
+    color: #333;
+    letter-spacing: 1px;
+  }
+  
+  #new-task {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  
+  #task-list {
+    max-height: 300px;
+    overflow-y: auto;
+  }
+  
+  #task-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #task-list::-webkit-scrollbar-thumb {
+    background-color: #007bff;
+    border-radius: 10px;
+  }
+  
+  #task-list::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+  }
+  
